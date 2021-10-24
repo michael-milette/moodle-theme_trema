@@ -17,7 +17,7 @@
 {{!
     Page navbar.
 }}
-<nav class="fixed-top navbar navbar-light bg-white navbar-expand moodle-has-zindex">
+<nav class="fixed-top navbar navbar-light bg-white navbar-expand moodle-has-zindex" aria-label="{{#str}}sitemenubar, admin{{/str}}">
 
         <div data-region="drawer-toggle" class="d-inline-block mr-3">
             <button aria-expanded="{{#navdraweropen}}true{{/navdraweropen}}{{^navdraweropen}}false{{/navdraweropen}}" aria-controls="nav-drawer" type="button" class="btn nav-link float-sm-left mr-1 btn-secondary" data-action="toggle-drawer" data-side="left" data-preference="drawer-open-nav">{{#pix}}i/menubars{{/pix}}<span class="sr-only">{{#str}}sidepanel, core{{/str}}</span></button>
@@ -31,19 +31,19 @@
             {{/ output.should_display_navbar_logo }}
             {{^ output.should_display_navbar_logo }}
                 <span class="site-name d-inline">{{{ sitename }}}</span>
-            {{/ output.should_display_navbar_logo }}       
+            {{/ output.should_display_navbar_logo }}
         </a>
 
         <ul class="navbar-nav trema-custom-menu d-none d-md-flex">
-            <!-- custom_menu -->            
+            <!-- custom_menu -->
             {{{ output.custom_menu }}}
             <!-- page_heading_menu -->
             {{{ output.page_heading_menu }}}
         </ul>
-        <ul class="nav navbar-nav ml-auto">
-            <div class="d-none d-lg-block">
-                {{{ output.search_box }}}
-            </div>
+        <div class="ml-auto">
+            {{{ output.search_box }}}
+        </div>
+        <ul class="nav navbar-nav usernav">
         	<li class="nav-item lang-menu">
             	{{{ output.render_lang_menu }}}
         	</li>
@@ -52,10 +52,9 @@
             {{{ output.navbar_plugin_output }}}
             </li>
             <!-- user_menu -->
-            <li class="nav-item d-flex align-items-center">
+            <li class="nav-item align-items-center">
                 {{{ output.user_menu }}}
             </li>
         </ul>
         <!-- search_box -->
 </nav>
-
